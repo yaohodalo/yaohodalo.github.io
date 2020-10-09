@@ -2,7 +2,7 @@
 // Ensure that you include the apostrophe. You will need to use a method to get
 // access to that div and make changes to the content.
 
-let myName = "Yao Poudima"
+let myName = "Yao Poudima";
 const myHeading = document.querySelector('h1');
 myHeading.textContent = myName + 's Lab 4';
 
@@ -19,7 +19,7 @@ document.querySelector('.content').append(myFirst, mySecond);
 // Your full name should be stored in a variable and the length should be calculated 
 //with a built in function. i.e.: "my name has 10 characters "..."Bill Farmer"
 
-myFirst.innerText = 'my name has'+(myName.length-1) + 'characters'+'....'+ myName
+myFirst.innerText = 'my name has'+(myName.length-1) + 'characters'+'....'+ myName;
 
 //4. & 5. Into the second paragraph tag, return the 3rd character in your first name
 //Capitalize that character:i.e. "the third character in my name is L" (Bill Farmer)
