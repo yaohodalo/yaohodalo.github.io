@@ -252,9 +252,10 @@ let myName = "Yao Poudima";
 const myHeading = document.querySelector('.header');
 myHeading.textContent = myName + ' s List Of Countries';
 
-// 2. Using JS, inject an ordered list into the div with the class "content"
 
-
+const btn = document.querySelector('button');    // 2. Using JS, inject an ordered list into the div with the class "content"
+btn.onclick = function() {
+console.log("List of countries in the world", countries);
 
 // 3. Give your new ordered list the class "countries"
 const content = document.querySelector('.content');
@@ -264,11 +265,7 @@ orderedList.className = 'countries';
 content.appendChild(orderedList);
 
 // 4. Design the following function to run on the click of a button from the index page
-const btn = document.querySelector('button');
-btn.onclick = function() {
-console.log("List of countries in the world", countries);
- 
-}
+
 // 5. Select 25 random countries from your list by writing a separate 
 // function that makes use of Math.random You may need to explore how to do this by 
 // looking it up at MDN
@@ -309,3 +306,4 @@ listCountries.forEach(element => {
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min + 1)) + min;
   };
+}
