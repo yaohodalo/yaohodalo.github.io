@@ -245,47 +245,46 @@ const countries = [
   { name: "Zimbabwe", code: "ZW" },
 ];
 
-
 let myButton = document.querySelector('button');
 myButton.onclick = function() {
     console.log("List of countries in the world", countries);
 
-const content = document.querySelector(".content");
-content.innerHTML = " ";
-const orderlist = document.createElement("ol");
-orderlist.className = "countries";
-content.appendChild(orderlist)
+    const content = document.querySelector(".content");
+    content.innerHTML = " ";
+    const orderlist = document.createElement("ol");
+    orderlist.className = "countries";
+    content.appendChild(orderlist)
   
-let countryList = [];
-let i = 0;
-for(i; i < 25; i++){
-    let temp = getRandomIntInclusive(0, 242);
-    if(countriesList.includes(temp)) {
-        i--;
-    } 
-    else {
-        countriesList.push(temp);
+    let countryList = [];
+    let i = 0;
+    for(i; i < 25; i++){
+        let temp = getRandomIntInclusive(0, 242);
+        if(countriesList.includes(temp)) {
+            i--;
+        } 
+        else {
+            countriesList.push(temp);
+        }
     }
-}
     
-countriesList.sort(function(first, second){return first-second});
+    countriesList.sort(function(first, second){return first-second});
   
-countriesList.forEach(element => {
-    const aElement = document.createElement("li");
-    aElement.innerHTML = `<strong>${countries[element].code}</strong> ${countries[element].name}`;
-    ordlist.appendChild(aElement);
+    countriesList.forEach(element => {
+        const aElement = document.createElement("li");
+        aElement.innerHTML = `<strong>${countries[element].code}</strong> ${countries[element].name}`;
+        ordlist.appendChild(aElement);
     });
   
     countries.forEach(element => {
-      if (!countriesList.includes(countries.indexOf(element))){
-        console.log(`Country: ${element.name}, Code: ${element.code}`);
-      }
-});
+        if (!countriesList.includes(countries.indexOf(element))){
+         console.log(`Country: ${element.name}, Code: ${element.code}`);
+        }
+    });
 
   
-function getRandomIntInclusive(min, max) {
-min = Math.ceil(min);
-max = Math.floor(max);
-return Math.floor(Math.random() * (max - min + 1)) + min; 
+    function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
     }
 }
