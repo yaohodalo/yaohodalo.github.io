@@ -247,39 +247,43 @@ const countries = [
 console.log("List of countries in the world", countries);
 
 let myButton = document.querySelector('button');
+let temp_countries = countries.slice(0);
 myButton.onclick = function() {
-  const content = document.querySelector('.content');
+  const content = document.querySelector(".content");
   content.innerHTML = "";
-  const content = document.querySelector(".content");  
-  content.innerHTML = " ";
-  const orderList = document.createElement("ol");
-  orderList.className ="countries";
-  content.appendChild(orderList);
-  let listCountries = [];
+  const orderlist = document.createElement("ol");
+  orderlist.className = "countries";
+  content.appendChild(orderlist)
+
+  let countryList = [];
   let i = 0;
   for(i; i < 25; i++){
     let temp = getRandomIntInclusive(0, 242);
-    if(listCountries.includes(temp)){
+    if(countriesList.includes(temp)) {
       i--;
-    }
+    } 
     else {
-    listCountries.push(temp);
+      countriesList.push(temp);
     }
   }
-  listCountries.sort(function(first, second){return first-second});
-  listCountries.forEach(element => {
-  const aElement = document.createElement("li");
-  aElement.innerHTML = `<a>${countries[element].code}</a> ${countries[element].name}`;
-  ordlist.appendChild(aElement);
+  
+  countriesList.sort(function(first, second){return first-second});
+
+  countriesList.forEach(element => {
+    const aElement = document.createElement("li");
+    aElement.innerHTML = `<strong>${countries[element].code}</strong> ${countries[element].name}`;
+    ordlist.appendChild(aElement);
   });
-  listCountries.forEach(element => {
-    if(!listCountries.includes(countries.indexOf(element))){
-      console.log(`Country: ${element.name}, Code: ${element.code}`); 
+
+  countries.forEach(element => {
+    if (!countriesList.includes(countries.indexOf(element))){
+      console.log(`Country: ${element.name}, Code: ${element.code}`);
     }
   });
-function getRandomIntInclusive(min, max){
+}
+
+function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
