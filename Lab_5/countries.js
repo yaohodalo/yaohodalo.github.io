@@ -253,7 +253,7 @@ const myHeading = document.querySelector('.header');
 myHeading.textContent = myName + ' s List Of Countries';
 
 
-const btn = document.querySelector('button');    // 4. Design the following function to run on the click of a button from the index page
+const btn = document.querySelector("button");    // 4. Design the following function to run on the click of a button from the index page
 btn.onclick = function() {
   console.log("List of countries in the world", countries);
 
@@ -288,21 +288,22 @@ listCountries.sort(function(first, second){return first-second});
 //inject a new list item for each country into the ol from #3
 
 listCountries.forEach(element => {
-  const firstElement = document.createElement("li");
-  firstElement.innerHTML = '<b>' + countries[element].code + '</b>' + " " + countries[element].name;
-  orderlist.appendChild(firstElement);
+  const aElement = document.createElement("li");
+  aElement.innerHTML = `<a>${countries[element].code}</a> ${countries[element].name}`;
+  ordlist.appendChild(aElement);
 });
 
 // 8.Display the name of each country in a normal font weight// 9.Display the country code for each in a bold font weight
 // 10.Log the unselected coun function getRandomIntInclusive(min, max) {
   listCountries.forEach(element => {
     if(!listCountries.includes(countries.indexOf(element))){
-      console.log('Country: ${element.name}, code: ${element.code}'); 
+      console.log(`Country: ${element.name}, Code: ${element.code}`); 
     }
   });
+
+}
   function getRandomIntInclusive(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
   };
-}
