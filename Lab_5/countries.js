@@ -253,8 +253,7 @@ const myHeading = document.querySelector('.header');
 myHeading.textContent = myName + ' s List Of Countries';
 
 // 2. Using JS, inject an ordered list into the div with the class "content"
-const content = document.querySelector('.content');
-content.innerHTML = '';
+
 
 
 // 3. Give your new ordered list the class "countries"
@@ -265,8 +264,8 @@ content.appendChild(orderedList);
 // 4. Design the following function to run on the click of a button from the index page
 const btn = document.querySelector('button');
 btn.onclick = function() {
-  console.log("List of countries in the world", countries);
- 
+  const content = document.querySelector('.content');
+  content.innerHTML = '';
 }
 
 btn.addEventListener('click', btn.onclick);
@@ -298,11 +297,7 @@ listCountries.forEach(element => {
   ordered_list.appendChild(firstElement);
 });
 
-// 8.Display the name of each country in a normal font weight
-
-
-// 9.Display the country code for each in a bold font weight
-
+// 8.Display the name of each country in a normal font weight// 9.Display the country code for each in a bold font weight
 // 10.Log the unselected coun function getRandomIntInclusive(min, max) {
   listCountries.forEach(element => {
     if(!listCountries.includes(countries.indexOf(element))){
