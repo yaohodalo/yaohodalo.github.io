@@ -250,35 +250,67 @@ console.log("List of countries in the world", countries);
 
 let myName = "Yao Poudima";
 const myHeading = document.querySelector('.header');
-myHeading.textContent = myName + ' s Lab 5';
+myHeading.textContent = myName + ' s List Of Countries';
 
 // 2. Using JS, inject an ordered list into the div with the class "content"
-let lists = document.createElement('list')
-document.querySelector('.content')
+const content = document.querySelector('.content');
+content.innerHTML = '';
+
 
 // 3. Give your new ordered list the class "countries"
-document.getElementsByName('list').className += "countries"
+const orderedList = document.createElement("ol");
+orderedList.className = 'countries';
+content.appendChild(orderedList);
 
 // 4. Design the following function to run on the click of a button from the index page
-
 const btn = document.querySelector('button');
 btn.onclick = function() {
-  const rndlist= 'list(' + random(26) + ',' + random(26) + ',' + random(26) + ')';
- // document.querySelector('.active')
+  console.log("List of countries in the world", countries);
+ 
 }
 
 btn.addEventListener('click', btn.onclick);
 // 5. Select 25 random countries from your list by writing a separate 
 // function that makes use of Math.random You may need to explore how to do this by 
 // looking it up at MDN
- 
-function getRandom(arr) {
-  return arr[Math.floor(Math.random() * 26)]
+
+let listCountries = [];
+let i =0;
+for(i;i<25;i++){
+  let temp = getRandomInclusive(0, 242);
+  if(listCountries.includes(temp)){
+    i--;
+  }
+  else {
+    listCountries.push(temp);
+  }
 }
-let randomCountry = getRandom(Object.values(countries));
 
-// 6.
+// 6.Make sure the selection is unique
+listCountries.sort(function(first, second){return first-second});
 
-myArray = myArray.filter( function(getRandom) {
-  return !toRemove.includes(getRandom);})
+// 7. Using a .forEach or a .map function, 
+//inject a new list item for each country into the ol from #3
 
+listCountries.forEach(element => {
+  const firstElement = document.createElement('li');
+  firstElement.innerHTML = '<b>' + countries[element].code + '</b>' + '' + countries[element].name;
+  ordered_list.appendChild(firstElement);
+});
+
+// 8.Display the name of each country in a normal font weight
+
+
+// 9.Display the country code for each in a bold font weight
+
+// 10.Log the unselected coun function getRandomIntInclusive(min, max) {
+  listCountries.forEach(element => {
+    if(!listCountries.includes(countries.indexOf(element))){
+      console.log('Country: ${element.name}, code: ${element.code}'); 
+    }
+  });
+  function getRandomInclusive(min, max){
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
