@@ -247,7 +247,6 @@ const countries = [
 console.log("List of countries in the world", countries);
 
 let myButton = document.querySelector('button');
-//let temp_countries = countries.slice(0);
 myButton.onclick = function() {
   const content = document.querySelector('.content');
   content.innerHTML = "";
@@ -256,12 +255,6 @@ myButton.onclick = function() {
   const orderList = document.createElement("ol");
   orderList.className ="countries";
   content.appendChild(orderList);
-
-
-// 5. Select 25 random countries from your list by writing a separate 
-// function that makes use of Math.random You may need to explore how to do this by 
-// looking it up at MDN
-
   let listCountries = [];
   let i = 0;
   for(i; i < 25; i++){
@@ -273,27 +266,18 @@ myButton.onclick = function() {
     listCountries.push(temp);
     }
   }
-
-// 6.Make sure the selection is unique
   listCountries.sort(function(first, second){return first-second});
-
-// 7. Using a .forEach or a .map function, 
-//inject a new list item for each country into the ol from #3
-
   listCountries.forEach(element => {
   const aElement = document.createElement("li");
   aElement.innerHTML = `<a>${countries[element].code}</a> ${countries[element].name}`;
   ordlist.appendChild(aElement);
   });
-
-// 8.Display the name of each country in a normal font weight// 9.Display the country code for each in a bold font weight
-// 10.Log the unselected coun function getRandomIntInclusive(min, max) {
   listCountries.forEach(element => {
     if(!listCountries.includes(countries.indexOf(element))){
       console.log(`Country: ${element.name}, Code: ${element.code}`); 
     }
   });
-  function getRandomIntInclusive(min, max){
+function getRandomIntInclusive(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
