@@ -244,7 +244,7 @@ const countries = [
   { name: "Zambia", code: "ZM" },
   { name: "Zimbabwe", code: "ZW" },
 ];
-
+console.log("List of countries in the world", countries);
 
 
 function Data() {
