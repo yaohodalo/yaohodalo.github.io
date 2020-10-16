@@ -253,27 +253,26 @@ const myHeading = document.querySelector('.header');
 myHeading.textContent = myName + ' s List Of Countries';
 
 
-const btn = document.querySelector('button');    // 2. Using JS, inject an ordered list into the div with the class "content"
+const btn = document.querySelector('button');    // 4. Design the following function to run on the click of a button from the index page
 btn.onclick = function() {
-console.log("List of countries in the world", countries);
+  console.log("List of countries in the world", countries);
 
 // 3. Give your new ordered list the class "countries"
-const content = document.querySelector('.content');
-content.innerHTML = '';
-const orderedList = document.createElement("ol");
-orderedList.className = 'countries';
-content.appendChild(orderedList);
+const content = document.querySelector(".content");  // 2. Using JS, inject an ordered list into the div with the class "content"
+content.innerHTML = " ";
+const orderList = document.createElement("ol");
+orderList.className ="countries";
+content.appendChild(orderList);
 
-// 4. Design the following function to run on the click of a button from the index page
 
 // 5. Select 25 random countries from your list by writing a separate 
 // function that makes use of Math.random You may need to explore how to do this by 
 // looking it up at MDN
 
 let listCountries = [];
-let i =0;
-for(i;i<25;i++){
-  let temp = getRandomInclusive(0, 242);
+let i = 0;
+for(i; i < 25; i++){
+  let temp = getRandomIntInclusive(0, 242);
   if(listCountries.includes(temp)){
     i--;
   }
@@ -289,9 +288,9 @@ listCountries.sort(function(first, second){return first-second});
 //inject a new list item for each country into the ol from #3
 
 listCountries.forEach(element => {
-  const firstElement = document.createElement('li');
-  firstElement.innerHTML = '<b>' + countries[element].code + '</b>' + '' + countries[element].name;
-  ordered_list.appendChild(firstElement);
+  const firstElement = document.createElement("li");
+  firstElement.innerHTML = '<b>' + countries[element].code + '</b>' + " " + countries[element].name;
+  orderlist.appendChild(firstElement);
 });
 
 // 8.Display the name of each country in a normal font weight// 9.Display the country code for each in a bold font weight
@@ -302,8 +301,8 @@ listCountries.forEach(element => {
     }
   });
   function getRandomInclusive(min, max){
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min + 1)) + min;
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 }
