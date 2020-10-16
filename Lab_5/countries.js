@@ -246,11 +246,8 @@ const countries = [
 ];
 console.log("List of countries in the world", countries);
 
-
-function Data() {
-
-  //const btn = document.querySelector("button");    // 4. Design the following function to run on the click of a button from the index page
-  //btn.onclick = function() {
+const btn = document.querySelector("button");    // 4. Design the following function to run on the click of a button from the index page
+btn.onclick = function() {
   //console.log("List of countries in the world", countries);
 
 // 3. Give your new ordered list the class "countries"
