@@ -249,9 +249,9 @@ const countries = [
 
 function Data() {
 
-  const btn = document.querySelector("button");    // 4. Design the following function to run on the click of a button from the index page
-  btn.onclick = function() {
-  console.log("List of countries in the world", countries);
+  //const btn = document.querySelector("button");    // 4. Design the following function to run on the click of a button from the index page
+  //btn.onclick = function() {
+  //console.log("List of countries in the world", countries);
 
 // 3. Give your new ordered list the class "countries"
   const content = document.querySelector(".content");  // 2. Using JS, inject an ordered list into the div with the class "content"
@@ -302,5 +302,4 @@ function getRandomIntInclusive(min, max){
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
-};
 }
