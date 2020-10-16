@@ -249,7 +249,7 @@ const countries = [
 let myButton = document.querySelector('button');
 myButton.onclick = function() {
     console.log("List of countries in the world", countries);
-  
+}
 const content = document.querySelector(".content");
 content.innerHTML = " ";
 const orderlist = document.createElement("ol");
@@ -280,8 +280,8 @@ countriesList.forEach(element => {
       if (!countriesList.includes(countries.indexOf(element))){
         console.log(`Country: ${element.name}, Code: ${element.code}`);
       }
-    });
-}
+});
+
   
 function getRandomIntInclusive(min, max) {
 min = Math.ceil(min);
