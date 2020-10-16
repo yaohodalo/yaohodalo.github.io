@@ -244,10 +244,11 @@ const countries = [
   { name: "Zambia", code: "ZM" },
   { name: "Zimbabwe", code: "ZW" },
 ];
+console.log("List of countries in the world", countries); 
 
 let myButton = document.querySelector('button');
 myButton.onclick = function() {
-    console.log("List of countries in the world", countries);
+   
 
     const content = document.querySelector(".content");
     content.innerHTML = " ";
