@@ -244,7 +244,7 @@ const countries = [
   { name: "Zambia", code: "ZM" },
   { name: "Zimbabwe", code: "ZW" },
 ];
-console.log("List of countries in the world", countries);
+
 
 // 1. Add a header to the lab with "YourName's List Of Countries"
 
@@ -257,6 +257,8 @@ myHeading.textContent = myName + ' s List Of Countries';
 
 
 // 3. Give your new ordered list the class "countries"
+const content = document.querySelector('.content');
+content.innerHTML = '';
 const orderedList = document.createElement("ol");
 orderedList.className = 'countries';
 content.appendChild(orderedList);
@@ -264,11 +266,9 @@ content.appendChild(orderedList);
 // 4. Design the following function to run on the click of a button from the index page
 const btn = document.querySelector('button');
 btn.onclick = function() {
-  const content = document.querySelector('.content');
-  content.innerHTML = '';
+console.log("List of countries in the world", countries);
+ 
 }
-
-btn.addEventListener('click', btn.onclick);
 // 5. Select 25 random countries from your list by writing a separate 
 // function that makes use of Math.random You may need to explore how to do this by 
 // looking it up at MDN
