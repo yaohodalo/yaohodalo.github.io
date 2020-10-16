@@ -269,25 +269,26 @@ const countries = [
   { name: "Zambia", code: "ZM" },
   { name: "Zimbabwe", code: "ZW" },
 ];
-console.log("List of countries in the world", countries);
+
 
 let myButton = document.querySelector('button');
-let temp_countries = countries.slice(0);
 myButton.onclick = function() {
-  const content = document.querySelector(".content");
-  content.innerHTML = "";
-  const orderlist = document.createElement("ol");
-  orderlist.className = "countries";
-  content.appendChild(orderlist)
+  console.log("List of countries in the world", countries);
 
-  let countryList = [];
-  let i = 0;
-  for(i; i < 25; i++){
-    let temp = getRandomIntInclusive(0, 242);
-    if(countriesList.includes(temp)) {
+const content = document.querySelector(".content");
+content.innerHTML = "";
+const orderlist = document.createElement("ol");
+orderlist.className = "countries";
+content.appendChild(orderlist)
+
+let countryList = [];
+let i = 0;
+for(i; i < 25; i++){
+  let temp = getRandomIntInclusive(0, 242);
+  if(countriesList.includes(temp)) {
       i--;
-    } 
-    else {
+  } 
+  else {
       countriesList.push(temp);
     }
   }
@@ -308,11 +309,12 @@ myButton.onclick = function() {
 }
 
 function getRandomIntInclusive(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min; 
+min = Math.ceil(min);
+max = Math.floor(max);
+return Math.floor(Math.random() * (max - min + 1)) + min; 
 }
 
 </script>
-  </body>
+</body>
+
 </html>
