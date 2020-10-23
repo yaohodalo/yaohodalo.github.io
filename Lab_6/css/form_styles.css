@@ -4,7 +4,7 @@ body {
     font-size: 18px;
     color: #444;
     padding: 0 10px;
-    background: #eee;
+    background: rgb(245, 241, 241);
   }
   
   h1,
@@ -60,10 +60,7 @@ body {
     flex-wrap: nowrap;
   }
   
-  body{
-    background: beige;
-}
-
+  
   .content {
     background: #fff;
     border: 2px dotted #444;
