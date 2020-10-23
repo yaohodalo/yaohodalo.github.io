@@ -60,7 +60,9 @@ body {
     flex-wrap: nowrap;
   }
   
-  
+  body{
+    background: beige;
+}
 
   .content {
     background: #fff;
