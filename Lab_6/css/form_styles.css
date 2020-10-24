@@ -71,19 +71,14 @@ body {
   }
   
   .button {
-    background-color: #ffc477;
-    -moz-border-radius: 11px;
-    -webkit-border-radius: 11px;
-    border-radius: 11px;
-    border: 2px solid #eeb44f;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Verdana;
-    font-size: 14px;
-    padding: 10px 17px;
-    text-decoration: none;
-    text-shadow: 0px 1px 1px #cc9f52;
+    background-color: #FFBD58; 
+  color: #FFFAF2;
+  border-color: #FF9B39;
+  border-radius: 15px;
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  box-shadow: none;
   }
   
   .button:hover {
