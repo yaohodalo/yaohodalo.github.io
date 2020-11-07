@@ -17,7 +17,7 @@ function getBusRoute() {
         sessionStorage.setItem("lat_min", route.lat_min);
         sessionStorage.setItem("lon_max", route.lon_max);
         sessionStorage.setItem("lon_min", route.lon_min);
-        main.innerHTML = "Session Saved";
+      main.innerHTML = "Session Saved";
         // YOUR CODE HERE
       })
       .catch((err) => {
