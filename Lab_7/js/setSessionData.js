@@ -11,13 +11,13 @@ function getBusRoute() {
         return response.json();
       })
       .then((route) => {
-        console.log(busRouteURL);
-        sessionStorage.setItem("title", route.title);
-        sessionStorage.setItem("lat_max", route.lat_max);
-        sessionStorage.setItem("lat_min", route.lat_min);
-        sessionStorage.setItem("lon_max", route.lon_max);
-        sessionStorage.setItem("lon_min", route.lon_min);
-        main.innerHTML = "Session Saved";
+      console.log(busRouteURL);
+      sessionStorage.setItem("title", route.title);
+      sessionStorage.setItem("lat_max", route.lat_max);
+      sessionStorage.setItem("lat_min", route.lat_min);
+      sessionStorage.setItem("lon_max", route.lon_max);
+      sessionStorage.setItem("lon_min", route.lon_min);
+      main.innerHTML = "Session Saved";
       })
       .catch((err) => {
         console.log(err);
