@@ -15,12 +15,12 @@ async function getData() {
             // Loop to pick 5 random entries
             for (x = 0; x < 5; x++) {
                 num = Math.floor(Math.random() * listSize);
-                tdata = json.data.children[num].data;
-                subredt = tdata.subreddit;
-                author = tdata.author;
-                title = tdata.title;
-                upVote = tdata.ups;
-                let message = "<b>Subreddit </b>: " + subredt + " <b>Author</b>:" + title + " <b>Up votes</b>: " + upVote;
+                theData = json.data.children[num].data;
+                subred = theData.subreddit;
+                theAuthor = theData.author;
+                theTtitle = theData.title;
+                upVotes = theData.ups;
+                let message = "<b>Subreddit </b>: " + subred + " <b>Author</b>:" + theTtitle + " <b>Up votes</b>: " + upVotes;
                 let createli = document.createElement("li"); //put message in li
                 createli.innerHTML = message;
                 let theredditlist = document.querySelector("#redditList");
@@ -34,7 +34,7 @@ async function getData() {
                     Add a data entry to chartValues with author as the label and ups as the y component
                 */
                 /*.......*/
-                let addToChart = {'label':author,y:upVote}; // Gave this. This needs to be added to the 'chartValues'
+                let addToChart = {'label':theAuthor,y:upVotes}; // Gave this. This needs to be added to the 'chartValues'
                 /*.......*/
                 chartValues.push(addToChart);
             }
