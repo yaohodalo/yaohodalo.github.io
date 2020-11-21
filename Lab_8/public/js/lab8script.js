@@ -11,28 +11,36 @@ async function getData() {
     await fetch(url, settings)
         .then(res => res.json())
         .then((json) => {
-            let listSize = json.data.children.length;
+            let listSize = json.data.children.length; //list size
             // Loop to pick 5 random entries
-            var x;
             for (x = 0; x < 5; x++) {
+                num = Math.floor(Math.random() * listSize);
+                theData = json.data.children[num].data;
+                subred = theData.subreddit;
+                theAuthor = theData.author;
+                theTtitle = theData.title;
+                upVotes = theData.ups;
+                let message = "<b>Subreddit </b>: " + subred + " <b>Author</b>:" + theTtitle + " <b>Up votes</b>: " + upVotes;
+                let createli = document.createElement("li"); //put message in li
+                createli.innerHTML = message;
+                let theredditlist = document.querySelector("#redditList");
+                theredditlist.append(createli); //add li to theredditlist
                 /*
                     Get a random number within the size of the list
                     Get subreddit, author, title, and ups from record
                     Set the message to be:
                         let message = "<b>Subreddit </b>: " + subreddit + " <b>Author</b>:" + author + " <b>Title</b>:" + title + " <b>Up votes</b>: " + ups;
-                    Add a new <li> element with the message to the 'redditList' element
+                        Add a new <li> element with the message to the 'redditList' element
                     Add a data entry to chartValues with author as the label and ups as the y component
                 */
-    
-
                 /*.......*/
-                
-                let addToChart = {'label':author,y:ups}; // Gave this. This needs to be added to the 'chartValues'
+                let addToChart = {'label':theAuthor,y:upVotes}; // Gave this. This needs to be added to the 'chartValues'
                 /*.......*/
+                chartValues.push(addToChart);
             }
         })
         .then(values => console.log(chartValues));
-        //chart.render(); // Do you need to remove the comments from here in order to get it to work?
+        chart.render(); // Do you need to remove the comments from here in order to get it to work? Yes you do.
 };
 
 window.onload = async function makeChart() {
@@ -41,16 +49,14 @@ window.onload = async function makeChart() {
         title: {
             text: "Upvotes"
         },
-
         data: [     
             { 
                 type: "column",
                 name: "Popular Reddit",
-                dataPoints: // WHAT GOES HERE???
+                dataPoints: chartValues// WHAT GOES HERE???
             }
         ]
     });
-    
     chart.render();
 }
 

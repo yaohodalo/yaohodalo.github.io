@@ -1,0 +1,15 @@
+{
+  "name": "poudima_lab8",
+  "version": "1.0.0",
+  "description": "inst377 lab8",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "yao poudima",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
