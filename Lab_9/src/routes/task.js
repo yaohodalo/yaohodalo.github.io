@@ -1,4 +1,3 @@
-const { request } = require('express');
 let express = require('express')
 let router = express.Router()
 let db = require('../database');
@@ -34,11 +33,11 @@ router.post('/task', (req, res) => {
 
 //GET
 router.get('/task', (req, res) => {
-    if (!req.query.taskId) {
+    if(!req.query.taskId) {
         return res.status(400).send('Missing URL parameter id')
     }
     let sql = "select * from tasklist where id = ?"
-    console.log("req.query.taskId: " + req.query.taskId)
+    console.log("req.query.taskId: " +req.query.taskId)
     let params = [req.query.taskId]
     db.get(sql, params, (err, row) => {
         if (err) {
@@ -56,9 +55,9 @@ router.get('/task', (req, res) => {
 router.put('/task', (req, res) => {
     console.log("PUT called")
     var data = {
-        id : req.query.taskId,
-        taskName: req.body.taskId,
-      
+        id :req.query.taskId,
+        taskName: req.body.taskName
+        
     }
     console.log("data.id:" + data.id + " name:" + data.taskName)
     if (!data.id) {
@@ -81,24 +80,12 @@ router.put('/task', (req, res) => {
             })
     });
 })
-app.delete("/api/user/:id", (req, res, next) => {
-    db.run(
-        'DELETE FROM user WHERE id = ?',
-        req.params.id,
-        function (err, result) {
-            if (err){
-                res.status(400).json({"error": res.message})
-                return;
-            }
-            res.json({"message":"deleted", changes: this.changes})
-    });
-})
+
 //Delete
 //TODO add entire DELETE method
-
 router.delete("/task", (req, res, next) => {
     db.run(
-        'DELETE FROM user WHERE id = ?',
+        'DELETE FROM tasklist WHERE id = ?',
         req.query.taskId,
         function (err, result) {
             if (err){
@@ -108,6 +95,7 @@ router.delete("/task", (req, res, next) => {
             res.json({"message":"deleted", changes: this.changes})
     });
 })
+
 
 
 module.exports = router
