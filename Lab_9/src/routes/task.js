@@ -1,3 +1,4 @@
+const { Router } = require('express');
 let express = require('express')
 let router = express.Router()
 let db = require('../database');
@@ -33,11 +34,11 @@ router.post('/task', (req, res) => {
 
 //GET
 router.get('/task', (req, res) => {
-    if(!req.query.taskId) {
+    if (!req.query.taskId) {
         return res.status(400).send('Missing URL parameter id')
     }
     let sql = "select * from tasklist where id = ?"
-    console.log("req.query.taskId: " +req.query.taskId)
+    console.log("req.query.taskId: " + req.query.taskId)
     let params = [req.query.taskId]
     db.get(sql, params, (err, row) => {
         if (err) {
@@ -55,7 +56,7 @@ router.get('/task', (req, res) => {
 router.put('/task', (req, res) => {
     console.log("PUT called")
     var data = {
-        id :req.query.taskId,
+        id : req.query.taskId,
         taskName: req.body.taskName
         
     }
@@ -82,7 +83,6 @@ router.put('/task', (req, res) => {
 })
 
 //Delete
-//TODO add entire DELETE method
 router.delete("/task", (req, res, next) => {
     db.run(
         'DELETE FROM tasklist WHERE id = ?',
