@@ -137,24 +137,28 @@
         </div>
 
         <div class="flexbox-item">
-            --Add New Group--
-            <label for= "addNewGroup">New Group Name:</label>
-            <input type="text" id="addNewGroup" name="addNewGroup"/>
+            -- Add New Group --
+            <label for="addGroupName">Group Name:</label>
+            <input type="text" id="addGroupName" name="addGroupName"/>
             <br>
-            <button onclick="submitNewGroup()" class="flexbox-button">Add new group</button>
-
+            <button onclick="addNewGroup()" class="flexbox-button">Add new group</button>
+          
             <p id="postNewGroupContent"></p>
 
         </div>
 
+
         <div class="flexbox-item">
-            ----Search Task----
-            <label for="searchTask"> Search Task:</label>
-            <input type="text" id="searchTask" name="searchTask"/>
+            -- Search Tasks --
+            <label for="search">Search Task:</label>
+            <input type="text" id="search" name="search"/>
             <br>
             
+            <ul id="searchResults"></ul>
+
         </div>
 
+        
     </div>
 </body>
 

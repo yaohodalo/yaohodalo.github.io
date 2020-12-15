@@ -2,53 +2,6 @@ let express = require('express')
 let router = express.Router()
 let db = require('../database');
 
-
-//----Search Task-----
-//GET all tasks
-router.get('/allTasks', (req, res) => {
-
-    console.log("Get all tasks");
-    let sql = "select * from tasks";
-    db.all(sql, (err, row) => {
-      if (err) {
-        res.status(400).json({ "error": err.message });
-        return;
-      }
-      res.json({
-        "message": "success",
-        "data": row
-      })
-    });
-})
-
-/*function findMatches(wordToMatch, tasks){
-    return tasks.data.filter(myTask => {
-        const regex = new RegExp(wordToMatch,'gi');
-        return myTask.task.match(regex)
-    })
-}
-function displayMatches(){
-    const matchArrays = findMatches(this.value, tasks)
-    const html = matchArrays.map(myTask =>{
-        const regex = new RegExp(this.value, 'gi');
-        const taskName = myTask.task.replace(regex, `<span class="hl"> ${this.value}</span>`);
-    
-        return ` 
-        <li>
-            <span class="name">${taskName}</span>
-        </li>
-        `;
-
-    }).join('');
-    suggestions.innerHTML = html;
-}
-const searchInput = document.querySelector('.search');
-const suggestions = document.querySelector('.suggestions');
-
-searchInput.addEventListener('change', displayMatches);
-searchInput.addEventListener('keyup', displayMatches);
-*/
-
 // Create a new task
 // POST localhost:<port>/task
 router.post('/task', (req, res) => {
